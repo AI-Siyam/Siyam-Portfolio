@@ -70,9 +70,9 @@ body {
   content: " ";
   position: fixed;
   right: 2%;
-  top: 19%;
+  top: 22.8%;
   width: 4px;
-  height: 525px;
+  height: 450px;
   background-color: var(--text-primary);
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@ body {
   content: " ";
   position: fixed;
   right: 1.65%;
-  top: 18%;
+  top: 22%;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -101,7 +101,7 @@ body {
   content: " ";
   position: fixed;
   right: 1.65%;
-  top: 80%;
+  top: 76%;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -431,33 +431,28 @@ body {
 }
 
 .pos-2 {
-  top: 65px;
-  right: 18px;
-}
-
-.pos-3 {
-  top: 132px;
-  right: -9px;
+  top: 80px;
+  right: 10px;
 }
 
 .pos-4 {
-  top: 205px;
-  right: -18px;
+  top: 160px;
+  right: -14px;
 }
 
 .pos-5 {
-  top: 278px;
-  right: -6px;
+  top: 240px;
+  right: -14px;
 }
 
 .pos-6 {
-  top: 345px;
-  right: 24px;
+  top: 320px;
+  right: 10px;
 }
 
 .pos-7 {
-  top: 398px;
-  right: 67px;
+  top: 390px;
+  right: 60px;
 }
 
 /* ABOUT & STATS */
@@ -767,6 +762,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 950px;
 }
 
 .timeline-row {
@@ -809,31 +805,71 @@ body {
 .projects-grid,
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 420px);
+  column-gap: 60px;
+  row-gap: 50px;
 }
 
-.project-card,
+.project-card {
+  border: 2.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 22px;
+  background: var(--white);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .article-card {
-  border: 2px solid var(--card-border);
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.5);
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 580px;
+  width: 420px;
+  border: 2.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 22px;
+  background: var(--white);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.project-card:hover,
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
 .article-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.035);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+  z-index: 2;
+  /* lifts hovered card above its grid neighbors */
+}
+
+.article-card h4 {
+  font-family: "Anta", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.article-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 .project-banner,
 .article-thumb {
-  height: 140px;
-  background-color: #2b2b2b;
+  width: 100%;
+  height: 260px;
+  background-color: #d9d9d9;
+  border: 2px solid var(--card-border);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   overflow: hidden;
 }
 
@@ -844,13 +880,105 @@ body {
   object-fit: cover;
 }
 
-.read-link {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 0.75rem;
+.project-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #000;
-  text-decoration: underline;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  min-height: 80px;
+}
+
+.project-tech {
+  margin-bottom: 18px;
+}
+
+.project-tech::before {
+  content: "Technologies:";
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.tech-tag {
+  display: inline-block;
+  border: 1.5px solid var(--card-border);
+  border-radius: 5px;
+  padding: 5px 12px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.proj-btn {
+  flex: 1;
+  text-align: center;
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  padding: 11px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  background: var(--white);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.proj-btn:hover {
+  background-color: var(--dark-accent);
+  color: var(--white);
+}
+
+.read-link {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #636262;
+  color: var(--white);
+  font-family: "Anta", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-decoration: none;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 3;
+}
+
+.read-link svg {
+  transition: transform 0.4s ease;
+}
+
+.read-link:hover svg {
+  transform: translateX(4px);
+}
+
+.article-card:hover .read-link {
+  transform: translateY(0);
 }
 
 .articles-subtext {
@@ -861,22 +989,127 @@ body {
 }
 
 /* ACHIEVEMENTS */
-.achievements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-.achievement-item {
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--dark-accent);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  width: 50%;
+  margin-bottom: 55px;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  justify-content: flex-end;
+  padding-right: 55px;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  justify-content: flex-start;
+  padding-left: 55px;
+}
+
+.timeline-card {
+  width: 340px;
+  background-color: #f4f5f8;
+  border: 2.5px solid var(--dark-accent);
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-orange);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.14);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-orange);
+  border: 1.5px solid var(--primary-orange);
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-bottom: 10px;
+}
+
+.timeline-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.timeline-sub {
+  font-family: "Anta", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark-accent);
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.timeline-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.timeline-node {
+  position: absolute;
+  top: 0;
+  width: 54px;
+  height: 54px;
+  background-color: #2b2a2d; /* Dark dark-gray background */
+  border: 2px solid #1a1a1a;   /* Subtle dark ring */
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Gives depth like the 2nd screenshot */
 }
 
-.ach-icon {
-  width: 32px;
-  height: 32px;
+.timeline-item:nth-child(odd) .timeline-node {
+  right: -27px;
+}
+
+.timeline-item:nth-child(even) .timeline-node {
+  left: -27px;
+}
+
+.timeline-node img {
+  width: 28px;
+  height: 28px;
   object-fit: contain;
+  /* Removed 'filter: brightness(0) invert(1);' so the original orange trophy shows */
 }
 
 /* CONTACT */
@@ -886,14 +1119,32 @@ body {
   gap: 35px;
 }
 
+.contact-info h3 {
+  font-family: "Anta", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.contact-info p {
+  font-family: "Akshar", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 400px;
+  opacity: 0.7;
+  margin-bottom: 35px;
+}
+
 .contact-details-list {
+  font-family: "Akshar", sans-serif;
   list-style: none;
   margin-top: 15px;
 }
 
 .contact-details-list li {
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  opacity: 0.7;
 }
 
 .contact-form {
@@ -907,13 +1158,33 @@ body {
   padding: 12px;
   border: 1px solid #aaa;
   background: #fff;
-  font-family: inherit;
+  font-family: "Akshar", sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
 }
+
+.btn-connect-img {
+  max-width: 150px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.btn-connect-img:hover {
+  transform: scale(1.05);
+}
+
+.btn-full-img {
+  width: 150px;
+  height: 60px;
+}
+
 
 .site-footer {
   text-align: center;
   padding: 40px 0 10px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
 
