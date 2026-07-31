@@ -463,9 +463,8 @@ body {
 /* ABOUT & STATS */
 .about-grid {
   display: grid;
-  grid-template-columns: 500px 1fr;
+  grid-template-columns: 460px 1fr;
   gap: 70px;
-
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -549,8 +548,8 @@ body {
 }
 
 .stat-card {
-  width: 215px;
-  height: 250px;
+  width: 210px;
+  height: 240px;
   border: 5px solid var(--dark-accent);
   border-radius: 18px;
   padding: 25px;
