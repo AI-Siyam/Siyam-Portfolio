@@ -1087,14 +1087,17 @@ body {
   top: 0;
   width: 54px;
   height: 54px;
-  background-color: #2b2a2d; /* Dark dark-gray background */
-  border: 2px solid #1a1a1a;   /* Subtle dark ring */
+  background-color: #2b2a2d;
+  /* Dark dark-gray background */
+  border: 2px solid #1a1a1a;
+  /* Subtle dark ring */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Gives depth like the 2nd screenshot */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Gives depth like the 2nd screenshot */
 }
 
 .timeline-item:nth-child(odd) .timeline-node {
@@ -1145,6 +1148,30 @@ body {
   margin-bottom: 10px;
   font-size: 1.2rem;
   opacity: 0.7;
+}
+
+.social-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.social-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--dark-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-accent);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: var(--dark-accent);
+  color: var(--white);
+  transform: translateY(-4px);
 }
 
 .contact-form {
