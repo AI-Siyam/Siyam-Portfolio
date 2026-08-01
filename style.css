@@ -758,47 +758,98 @@ body {
 }
 
 /* EXPERIENCE TIMELINE */
-.timeline-wrapper {
+/* EXPERIENCE TIMELINE */
+.exp-timeline {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   max-width: 950px;
+  padding-left: 4px;
 }
 
-.timeline-row {
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 48px;
+  bottom: 48px;
+  width: 2px;
+  background-color: var(--dark-accent);
+  z-index: 0;
+}
+
+.exp-row {
+  position: relative;
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 22px;
 }
 
-.timeline-indicator {
-  width: 18px;
-  height: 18px;
-  background-color: var(--primary-orange);
-  border-radius: 50%;
-  margin-top: 20px;
+.exp-node {
+  position: relative;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--dark-accent);
+  border: 3px solid var(--primary-orange);
+  color: var(--primary-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dark-box {
+  flex: 1;
   background-color: var(--dark-accent);
   color: #fff;
-  padding: 22px;
-  width: 100%;
-  border-radius: 4px;
+  padding: 26px 28px;
+  border-radius: 8px;
 }
 
-.dark-box-header {
+.exp-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.exp-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
 }
 
-.badge-tag {
+.exp-company {
+  color: #e5e5e5;
+}
+
+.exp-date {
   color: var(--primary-orange);
-  font-size: 0.8rem;
   font-weight: 600;
+}
+
+.exp-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-list li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #d8d8d8;
+}
+
+.exp-list li strong {
+  color: #ffffff;
 }
 
 /* PROJECTS & ARTICLES */
