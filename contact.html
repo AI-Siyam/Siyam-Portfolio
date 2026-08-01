@@ -91,11 +91,13 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm"><input type="text" placeholder="Your Name" required><input
-                        type="email" placeholder="Your Email" required><input type="text" placeholder="Subject"
-                        required><textarea rows="4" placeholder="Your Message" required></textarea><button type="submit"
-                        class="btn-connect-img" style="border:none; cursor:pointer;"><img src="images/Let's connect.png"
-                            alt="Let's Talk" class="btn-full-img">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgogjvzj" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea rows="4" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-connect-img" style="border:none; cursor:pointer;">
+                        <img src="images/Let's connect.png" alt="Let's Talk" class="btn-full-img">
                     </button>
                 </form>
             </div>
